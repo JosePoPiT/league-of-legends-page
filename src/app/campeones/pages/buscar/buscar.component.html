@@ -1,0 +1,47 @@
+
+
+<div fxLayout="column">
+    <div>
+        <h1>Buscador de Campeones</h1>
+        <mat-divider></mat-divider>
+    </div>
+     
+    <div>
+        <h2>Buscador</h2>
+
+        <mat-form-field  appearance="fill">
+            <input type="text"
+                   placeholder="Pick one"
+                   aria-label="Number"
+                   matInput
+                   [(ngModel)]="termino"
+                   [matAutocomplete]="auto"
+                   (input)="buscando()">
+                <mat-autocomplete #auto="matAutocomplete">
+                    <mat-option *ngFor="let campeon of campeonesBuscados"
+                                 [value]="campeon.name"
+                                 (click)=" seleccionandoCampeon( campeon.id )">
+                        {{ campeon.name }}
+                    </mat-option>
+
+                    <mat-option value="" *ngIf="campeones.length === 0">
+                        No se encontro nada con el {{ termino }}
+                    </mat-option>
+                </mat-autocomplete>
+        </mat-form-field>
+
+
+    </div>
+</div>
+
+<div *ngIf="campeonSeleccionado">
+    <mat-card class="example-card">
+        <mat-card-header>
+          <div mat-card-avatar class="example-header-image"></div>
+          <mat-card-title> {{ campeonSeleccionado.name }}</mat-card-title>
+          <mat-card-subtitle>{{ campeonSeleccionado.title }}</mat-card-subtitle>
+        </mat-card-header>
+        <img mat-card-image src="http://ddragon.leagueoflegends.com/cdn/img/champion/loading/{{ campeonSeleccionado.id }}_0.jpg" alt="Photo of a Shiba Inu">
+        
+      </mat-card>
+</div>

@@ -1,0 +1,60 @@
+
+<mat-sidenav-container fullscreen>
+    <mat-sidenav #sidenav mode="push">
+        <mat-toolbar color="primary">
+            <span>Menú</span>
+            <span class="spacer"></span>
+
+            <button mat-icon-button
+                    (click)="sidenav.toggle()">
+                <mat-icon>view_list</mat-icon>
+            </button>
+    
+        </mat-toolbar>
+        <mat-nav-list>
+            <a routerLink="./listado"
+                mat-list-item
+                (click)="sidenav.toggle()">
+                <mat-icon mat-list-icon>sort_by_alpha</mat-icon>
+                <span>Listado de Campeones</span>
+            </a>
+        </mat-nav-list>
+        <mat-nav-list>
+            <a routerLink="./buscar"
+                mat-list-item
+                (click)="sidenav.toggle()">
+                <mat-icon mat-list-icon>search</mat-icon>
+                <span>Buscar</span>
+            </a>
+        </mat-nav-list>
+        <mat-nav-list>
+            <a routerLink="./champion"
+                mat-list-item
+                (click)="sidenav.toggle()">
+                <mat-icon>person_search</mat-icon>
+                <span>Campeon</span>
+            </a>
+        </mat-nav-list>
+    </mat-sidenav>
+
+    <mat-toolbar color="primary">
+        <button mat-raised-button
+                (click)="sidenav.toggle()">
+            <mat-icon>view_list</mat-icon>
+        </button>
+
+        <span class="spacer"></span>
+
+        <button mat-raised-button>
+            Logout
+        </button>
+
+    </mat-toolbar>
+
+    <div class="container">
+        <router-outlet></router-outlet>
+    </div>
+
+    
+
+</mat-sidenav-container>
