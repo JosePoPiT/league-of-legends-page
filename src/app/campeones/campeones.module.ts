@@ -11,7 +11,7 @@ import { MaterialModule } from '../material/material.module';
 import { HttpClientModule } from '@angular/common/http';
 import { CampeonTajertaComponent } from './components/campeon-tajeta/campeon-tarjeta.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-
+import { SwiperModule } from 'swiper/angular';
 
 
 
@@ -32,7 +32,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     MaterialModule,
     HttpClientModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    SwiperModule
   ]
 })
 export class CampeonesModule { }

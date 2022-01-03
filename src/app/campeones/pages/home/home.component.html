@@ -27,14 +27,6 @@
                 <span>Buscar</span>
             </a>
         </mat-nav-list>
-        <mat-nav-list>
-            <a routerLink="./champion"
-                mat-list-item
-                (click)="sidenav.toggle()">
-                <mat-icon>person_search</mat-icon>
-                <span>Campeon</span>
-            </a>
-        </mat-nav-list>
     </mat-sidenav>
 
     <mat-toolbar color="primary">
@@ -42,13 +34,6 @@
                 (click)="sidenav.toggle()">
             <mat-icon>view_list</mat-icon>
         </button>
-
-        <span class="spacer"></span>
-
-        <button mat-raised-button>
-            Logout
-        </button>
-
     </mat-toolbar>
 
     <div fxLayout="row" fxLayoutAlign="center center" style="padding-top: 20px;">

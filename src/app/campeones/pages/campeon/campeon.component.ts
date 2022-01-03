@@ -4,7 +4,12 @@ import { map, switchMap, tap } from 'rxjs/operators'
 import { CampeonesService } from '../../services/campeones.service';
 import { Campeon, Skill } from '../../interfaces/campeones.interface';
 import { FormControl } from '@angular/forms';
+// import Swiper core and required modules
+import SwiperCore, { Navigation, Pagination, Thumbs } from "swiper";
 
+
+// install Swiper modules
+SwiperCore.use([Navigation, Thumbs, Pagination]);
 @Component({
   selector: 'app-campeon',
   templateUrl: './campeon.component.html',
@@ -17,6 +22,7 @@ export class CampeonComponent implements OnInit, AfterViewInit {
   campeon!: Campeon;
   campeonKey!: string;
   skillsControl!: FormControl;
+  thumbsSwiper: any;  
 
   constructor( 
     private activatedRoute: ActivatedRoute,
@@ -48,22 +54,19 @@ export class CampeonComponent implements OnInit, AfterViewInit {
       )
       .subscribe( ({ data }) => {
         this.campeon = data[this.campeonKey];
-        // this.skillsControl.setValue(this.campeon.skills[0].name);
-        // console.log( data[this.campeonKey].image.full );
-        // console.log( data['Ahri'].lore );
+        console.log(this.campeon);
       });
-      console.log(this.skillSelectedHtml);
       this.skillsControlObservable();
 
   };
 
   ngAfterViewInit(): void {
+
   }
 
   skillsControlObservable(): void {
     this.skillsControl.valueChanges.subscribe((skillName: string) => {
       this.showSkills(skillName);
-      console.log('holaa');
       // this.fadeAnimation = !this.fadeAnimation;
     })
   }
@@ -108,17 +111,21 @@ export class CampeonComponent implements OnInit, AfterViewInit {
     this.campeon.skills[index].checked = true;
     if(this.skillSelectedHtml) {
       this.skillSelectedHtml.nativeElement.innerHTML = this.showSkillSelectedHTML(index);
-      console.log(this.skillSelectedHtml);
     }
 
   }
 
   showSkillSelectedHTML(index: number): string {
     return `
-    <p class="skill">${this.campeon.skills[index].key}</p>
-    <h4>${this.campeon.skills[index].name}</h4>
-    <p class="texto-campeon">${this.campeon.skills[index].description}</p>
+      <p class="skill">${this.campeon.skills[index].key}</p>
+      <h4>${this.campeon.skills[index].name}</h4>
+      <p class="texto-campeon">${this.campeon.skills[index].description}</p>
     `;
+  }
+
+  onSwiper(swiper: any) {
+  }
+  onSlideChange() {
   }
 
 

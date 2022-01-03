@@ -1,3 +1,8 @@
+@import "~swiper/css";
+@import "~swiper/css/navigation";
+@import "~swiper/css/thumbs";
+@import "~swiper/css/pagination";
+
 .presentation {
     width: 100%;
     display: flex;
@@ -98,3 +103,94 @@
         font-size: 20px;
     }
 }
+
+.campeon {
+    &__skins {
+        &__title {
+            & h2 {
+                text-transform: uppercase;
+            }
+        }
+        &__thumbs {
+            width: 80%;
+            margin: 0 auto;
+            grid-row: 2 / 3;
+            margin-bottom: 30px;
+
+            &__container {
+                position: relative;
+
+                &__title {
+                    content: '';
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    width: fit-content;
+                    background-color: rgba(#673ab7, .6);
+                    backdrop-filter: blur(.5rem);
+                    padding: 1.5% 6%;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+
+                    & h4 {
+                        color: #fff;
+                        text-transform: uppercase;
+                        margin-bottom: 0;
+                    }
+                }
+            }
+        }
+
+        &__slides {
+            width: 50%;
+            margin: 0 auto;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            cursor: pointer;
+            position: relative;
+        }
+    }
+}
+
+// Swiper Styles
+
+.swiper {
+    width: 100%;
+  }
+  
+  .swiper-slide {
+      width: 30%;
+      & img {
+          width: 100%;
+          vertical-align: top;
+      }
+  }
+  .swiper-pagination-horizontal {
+      bottom: 0 !important;
+  }
+  .swiper-pagination-bullet {
+      opacity: 1;
+      background-color: #a698be;
+  }
+  
+  .swiper-pagination-bullet-active {
+      background-color: #673ab7;
+  }
+  
+  .mySwiper .swiper-slide {
+      opacity: .7;
+  }
+  
+  .mySwiper .swiper-slide:hover {
+      opacity: 1;
+  }
+  
+  .mySwiper .swiper-slide-thumb-active {
+      opacity: 1;
+  }
+  .mySwiper .swiper-slide-thumb-active:hover {
+      opacity: 1;
+  }
+  

@@ -37,7 +37,7 @@
 
 <div *ngIf="campeonesBuscados.length === 0 && buscarCampeon.dirty">
     <div class="mensaje-error" fxLayout="column">
-        <h1>No hemos encontrado ningun campeon con el nombre {{ buscarCampeon.value }}, intenta con otro nombre</h1>
+        <h1>No hemos encontrado ningun campeon con el nombre <b>"{{ buscarCampeon.value }}"</b>, intenta con otro nombre</h1>
         <h3>Estos campeones podrian interesarte</h3>
         <div>
             <button mat-raised-button color="primary" (click)="pushingRandomChampions()">Otros campeones</button>

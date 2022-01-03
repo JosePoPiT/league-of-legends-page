@@ -14,6 +14,7 @@ export interface Campeon {
     partype: string;
     stats:   { [key: string]: number };
     skills: Skill[];
+    skins: Skin[]
 }
 
 export interface Skill {
@@ -22,6 +23,13 @@ export interface Skill {
     description: string,
     img: string;
     key: string;
+}
+
+export interface Skin {
+    id: string;
+    name: string,
+    num: number,
+    chromas: boolean;
 }
 
 export interface Image {
