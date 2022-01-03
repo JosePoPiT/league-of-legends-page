@@ -3,6 +3,13 @@
 @import "~swiper/css/thumbs";
 @import "~swiper/css/pagination";
 
+.spinner {
+    height: calc(100vh - 84px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+};
+
 .presentation {
     width: 100%;
     display: flex;

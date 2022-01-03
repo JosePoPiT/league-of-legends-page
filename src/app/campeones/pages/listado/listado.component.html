@@ -1,19 +1,23 @@
-<div class="container">
-    <h1>Listado de Campeones</h1>
-    <mat-divider></mat-divider>
-    <br>
-    
-    <div fxLayout="row wrap"
-         fxLayout.xs="column"
-         fxLayoutAlign="start center">
+<div class="spinner" *ngIf="!campeones; else divCampeon">
+    <mat-spinner></mat-spinner>
+</div>
+
+<ng-template #divCampeon>
+    <div class="container">
+        <h1>Listado de Campeones</h1>
+        <mat-divider></mat-divider>
+        <br>
         
-        <div fxFlex="20"
-            *ngFor="let campeon of campeones">
-            <app-campeon-tajerta [campeon]="campeon"></app-campeon-tajerta>
+        <div class="card__container">
+            
+            <div class="card__container__item"
+                *ngFor="let campeon of campeones">
+                <app-campeon-tajerta [campeon]="campeon"></app-campeon-tajerta>
+            </div>
         </div>
     </div>
+</ng-template>
 
-</div>
 
 
 

@@ -1,27 +1,28 @@
-# LolApp
+# League of Legends Angular Page
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 12.2.5.
+### Vistas del Desarrollo
 
-## Development server
+Este desarrollo  tiene tres vistas
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+- Listado de campeones: como su nombre lo indica te muestra todos los campeones que existen actualmente dentro del juego.
 
-## Code scaffolding
+- Detalle del campeon: Cuando seleccionas cualquier campeón en el listado de campeones te lleva a esta página en donde puedes ver mas información acerca del campeón.
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+- Buscador: Esta vista te muestra un input en el cual puedes escribir el nombre de cualquier campeón que te interese, en caso de escribir una palabra que no este asociada al nombre de algún campeón, te saldra un mensaje indicadote el error y sugerencias de campeones que puedan interesarte.
 
-## Build
+### Tecnologías Utilizadas
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+Para la creación de este proyecto se utilizaron las siguientes tecnologías:
 
-## Running unit tests
+- Angular CLI: 12.2.13
+- Node: 16.13.0
+- Typescript
+- Javascript
+- HTML 5
+- SCSS
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+### Ejecución del Pryecto (Comando)
 
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+~~~
+ng serve
+~~~
