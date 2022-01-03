@@ -10,7 +10,7 @@ import { CampeonesRoutingModule } from './campeones-routing.module';
 import { MaterialModule } from '../material/material.module';
 import { HttpClientModule } from '@angular/common/http';
 import { CampeonTajertaComponent } from './components/campeon-tajeta/campeon-tarjeta.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 
 
@@ -31,7 +31,8 @@ import { FormsModule } from '@angular/forms';
     FlexLayoutModule,
     MaterialModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule
   ]
 })
 export class CampeonesModule { }

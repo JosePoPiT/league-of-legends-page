@@ -1,0 +1,43 @@
+mat-card {
+    margin-bottom: 20px;
+    padding-left: unset;
+    padding-right: unset;
+    padding-bottom: unset;
+    cursor: pointer;
+    transition: all .3s ease;
+
+    & mat-card-header {
+        ::ng-deep {
+            & .mat-card-header-text {
+                margin: 0 12px;
+                & mat-card-title {
+                    font-size: 20px;
+                }
+        
+                & mat-card-subtitle {
+                    font-size: 12px;
+                }
+            }
+
+        }
+    }
+
+    &:hover {
+        background-color: #a698be;
+    }
+    &:hover .mat-card-img img {
+        transform: scale(1.2);
+    }
+    & .mat-card-img {
+        width: 100%;
+        overflow: hidden;
+
+        & img {
+            vertical-align: top;
+            width: 100%;
+            transform: scale(1.1);
+            transition: all .3s ease;
+        }
+
+    }
+}

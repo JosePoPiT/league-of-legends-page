@@ -4,12 +4,24 @@ export interface Campeon {
     key:     string;
     name:    string;
     title:   string;
+    lore:    string;
     blurb:   string;
+    enemytips: string[];
+    allytips: string[];
     info:    Info;
     image:   Image;
     tags:    Tag[];
     partype: string;
     stats:   { [key: string]: number };
+    skills: Skill[];
+}
+
+export interface Skill {
+    checked: boolean;
+    name: string,
+    description: string,
+    img: string;
+    key: string;
 }
 
 export interface Image {

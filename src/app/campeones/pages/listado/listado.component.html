@@ -1,18 +1,17 @@
-<h1>Listado de Campeones</h1>
-<mat-divider></mat-divider>
-<br>
-
-<div fxLayout="row wrap"
-     fxLayout.xs="column"
-     fxLayoutAlign="center">
+<div class="container">
+    <h1>Listado de Campeones</h1>
+    <mat-divider></mat-divider>
+    <br>
     
-    <div fxFlex="30"
-        *ngFor="let campeon of campeones">
-
-        <app-campeon-tajerta [campeon]="campeon"></app-campeon-tajerta>
-       
+    <div fxLayout="row wrap"
+         fxLayout.xs="column"
+         fxLayoutAlign="start center">
+        
+        <div fxFlex="20"
+            *ngFor="let campeon of campeones">
+            <app-campeon-tajerta [campeon]="campeon"></app-campeon-tajerta>
+        </div>
     </div>
-
 
 </div>
 

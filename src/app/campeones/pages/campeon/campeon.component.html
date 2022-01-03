@@ -6,29 +6,79 @@
     </mat-grid-tile>
 </mat-grid-list>
 
-<<ng-template #divCampeon>
+<ng-template #divCampeon>
+
+    <div fxLayout="row">
+        <div class="presentation">
+           <img src="http://ddragon.leagueoflegends.com/cdn/img/champion/splash/{{ [campeonKey] }}_0.jpg" alt="">
+           <h1>{{ campeon.name | uppercase }}</h1>
+           <h3>{{ campeon.title | uppercase }}</h3>
+        </div>
+    </div>
 
     <div fxLayout="row"
          fxLayout.xs="column"
-         fxLayoutGap="30px">
+         fxLayoutGap="60px">
 
-         <div fxFlex="100">
-             <h1>{{ campeonKey }}</h1>
-             <mat-divider></mat-divider>
-             <br>
-            <img src="http://ddragon.leagueoflegends.com/cdn/img/champion/splash/{{ [campeonKey] }}_0.jpg" alt="">
+         <div fxFlex="50">
+            <div>
+                <h2>HISTORIA DEL CAMPEÓN</h2>
+                <mat-divider></mat-divider>
+                <br>
+                <p class="texto-campeon">{{campeon.lore}}</p>
+            </div>
+            <div>
+                <h2>Habilidades</h2>
+                <mat-divider></mat-divider>
+                <br>
+                <div fxLayout="row" fxLayoutAlign="space-between center">
+                    <div  *ngFor="let skill of campeon.skills" class="campeon-skills">
+                        <input 
+                            type="radio"
+                            name="championSkills"
+                            [formControl]="skillsControl"
+                            [id]="skill.name"
+                            [value]="skill.name">
+                        <div class="skill-label">
+                            <label [for]="skill.name">
+                                <img [src]="skill.img" alt="">
+                            </label>
+                        </div>
+                    </div>
+                </div>
+                <div class="skills-text">
+                    <div #skillSelectedHtml>
+                    </div>
+                </div>
+            </div>
          </div>
 
          <div fxFlex="50">
-             <!-- <h1>{{ 	 }}</h1> -->
+             <div>
+                <h2>TIPS PARA USAR EL CAMPEÓN</h2>
+                <mat-divider></mat-divider>
+                <br>
+                <p class="texto-campeon" *ngFor="let aTip of campeon.allytips">- {{aTip}}</p>
 
-             <br>
+             </div>
+
+             <div>
+                <h2>TIPS PARA VENCER AL CAMPEÓN</h2>
+                <mat-divider></mat-divider>
+                <br>
+                <p class="texto-campeon" *ngFor="let eTip of campeon.enemytips">- {{eTip}}</p>
+
+             </div>
              <button mat-button 
                      color="warn"
                      (click)="regresar()">
                 Regresar
              </button>
          </div>
+
+    </div>
+
+    <div>
 
     </div>
 

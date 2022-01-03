@@ -14,18 +14,13 @@
                    placeholder="Pick one"
                    aria-label="Number"
                    matInput
-                   [(ngModel)]="termino"
-                   [matAutocomplete]="auto"
-                   (input)="buscando()">
+                   [formControl]="buscarCampeon"
+                   [matAutocomplete]="auto">
                 <mat-autocomplete #auto="matAutocomplete">
                     <mat-option *ngFor="let campeon of campeonesBuscados"
                                  [value]="campeon.name"
                                  (click)=" seleccionandoCampeon( campeon.id )">
                         {{ campeon.name }}
-                    </mat-option>
-
-                    <mat-option value="" *ngIf="campeones.length === 0">
-                        No se encontro nada con el {{ termino }}
                     </mat-option>
                 </mat-autocomplete>
         </mat-form-field>
@@ -34,14 +29,25 @@
     </div>
 </div>
 
-<div *ngIf="campeonSeleccionado">
-    <mat-card class="example-card">
-        <mat-card-header>
-          <div mat-card-avatar class="example-header-image"></div>
-          <mat-card-title> {{ campeonSeleccionado.name }}</mat-card-title>
-          <mat-card-subtitle>{{ campeonSeleccionado.title }}</mat-card-subtitle>
-        </mat-card-header>
-        <img mat-card-image src="http://ddragon.leagueoflegends.com/cdn/img/champion/loading/{{ campeonSeleccionado.id }}_0.jpg" alt="Photo of a Shiba Inu">
-        
-      </mat-card>
+<div fxLayout="row" *ngIf="campeonSeleccionado && buscarCampeon.dirty">
+    <div fxFlex="20">
+        <app-campeon-tajerta [campeon]="campeonSeleccionado"></app-campeon-tajerta>
+    </div>
 </div>
+
+<div *ngIf="campeonesBuscados.length === 0 && buscarCampeon.dirty">
+    <div class="mensaje-error" fxLayout="column">
+        <h1>No hemos encontrado ningun campeon con el nombre {{ buscarCampeon.value }}, intenta con otro nombre</h1>
+        <h3>Estos campeones podrian interesarte</h3>
+        <div>
+            <button mat-raised-button color="primary" (click)="pushingRandomChampions()">Otros campeones</button>
+        </div>
+    </div>
+    <div fxLayout="row wrap" fxLayoutAlign="space-between center">
+        <div fxFlex="20" *ngFor="let champion of randomChampionsCard">
+            <app-campeon-tajerta [campeon]="champion"></app-campeon-tajerta>
+        </div>
+    </div>
+</div>
+
+

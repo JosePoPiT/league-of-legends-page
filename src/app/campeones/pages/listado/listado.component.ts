@@ -7,8 +7,7 @@ import { Campeon } from '../../interfaces/campeones.interface';
 @Component({
   selector: 'app-listado',
   templateUrl: './listado.component.html',
-  styles: [
-  ]
+  styleUrls: ['./listado.component.scss']
 })
 export class ListadoComponent implements OnInit {
 
