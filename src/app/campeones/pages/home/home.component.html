@@ -28,12 +28,15 @@
             </a>
         </mat-nav-list>
     </mat-sidenav>
-
     <mat-toolbar color="primary">
+        
         <button mat-raised-button
                 (click)="sidenav.toggle()">
             <mat-icon>view_list</mat-icon>
         </button>
+        <div class="centered-div">
+            <img class="logo-image" src="../../../../assets/img/lollogo.png" alt="Your Image Alt Text">
+        </div>
     </mat-toolbar>
 
     <div fxLayout="row" fxLayoutAlign="center center" style="padding-top: 20px;">
@@ -41,7 +44,5 @@
             <router-outlet></router-outlet>
         </div>
     </div>
-
-    
 
 </mat-sidenav-container>
