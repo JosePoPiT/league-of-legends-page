@@ -13,8 +13,12 @@ export class CampeonesService {
   constructor( private http: HttpClient) { }
 
   
+  // getCampeones(): Observable<Campeon[]> {
+  //   return this.http.get<Campeon[]>( 'https://ddragon.leagueoflegends.com/cdn/11.23.1/data/es_ES/champion.json')
+  // }
+
   getCampeones(): Observable<Campeon[]> {
-    return this.http.get<Campeon[]>( 'https://ddragon.leagueoflegends.com/cdn/11.23.1/data/es_ES/champion.json')
+    return this.http.get<Campeon[]>('http://ddragon.leagueoflegends.com/cdn/13.14.1/data/en_US/champion.json')
   }
   // getCampeones2(): Observable<Datum[]> {
   //   return this.http.get<Datum[]>( 'http://ddragon.leagueoflegends.com/cdn/11.23.1/data/es_ES/champion.json')
