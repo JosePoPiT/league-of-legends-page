@@ -4,6 +4,7 @@ import { ListadoComponent } from './pages/listado/listado.component';
 import { CampeonComponent } from './pages/campeon/campeon.component';
 import { BuscarComponent } from './pages/buscar/buscar.component';
 import { HomeComponent } from './pages/home/home.component';
+import { PortadaComponent } from './pages/portada/portada.component';
 
 const rutas:  Routes  = [
 
@@ -16,6 +17,10 @@ const rutas:  Routes  = [
         component: ListadoComponent
       },
       {
+        path:'portada',
+        component: PortadaComponent
+      },
+      {
         path:'buscar',
         component: BuscarComponent
       },
@@ -25,7 +30,7 @@ const rutas:  Routes  = [
       },
       {
         path:'**',
-        redirectTo: 'listado'
+        redirectTo: 'portada'
       }
     ]
   }

@@ -1,5 +1,5 @@
 
-<mat-sidenav-container>
+<mat-sidenav-container fxLayout="column">
     <mat-sidenav #sidenav mode="push">
         <mat-toolbar color="primary">
             <span>Menú</span>
@@ -34,13 +34,13 @@
                 (click)="sidenav.toggle()">
             <mat-icon>view_list</mat-icon>
         </button>
-        <div class="centered-div">
+        <div fxLayout="column" fxLayoutAlign="center center" class="div-centrado">
             <img class="logo-image" src="../../../../assets/img/lollogo.png" alt="Your Image Alt Text">
         </div>
     </mat-toolbar>
 
-    <div fxLayout="row" fxLayoutAlign="center center" style="padding-top: 20px;">
-        <div fxFlex="85">
+    <div fxLayout="row" fxLayoutAlign="center center" class="background">
+        <div fxFlex="85" >
             <router-outlet></router-outlet>
         </div>
     </div>

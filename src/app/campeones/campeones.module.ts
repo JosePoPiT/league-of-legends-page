@@ -12,6 +12,9 @@ import { HttpClientModule } from '@angular/common/http';
 import { CampeonTajertaComponent } from './components/campeon-tajeta/campeon-tarjeta.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { SwiperModule } from 'swiper/angular';
+import { PortadaComponent } from './pages/portada/portada.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { BrowserModule } from '@angular/platform-browser';
 
 
 
@@ -22,7 +25,8 @@ import { SwiperModule } from 'swiper/angular';
     CampeonComponent,
     HomeComponent,
     ListadoComponent,
-    CampeonTajertaComponent
+    CampeonTajertaComponent,
+    PortadaComponent
     
   ],
   imports: [
@@ -33,7 +37,7 @@ import { SwiperModule } from 'swiper/angular';
     HttpClientModule,
     FormsModule,
     ReactiveFormsModule,
-    SwiperModule
+    SwiperModule,
   ]
 })
 export class CampeonesModule { }

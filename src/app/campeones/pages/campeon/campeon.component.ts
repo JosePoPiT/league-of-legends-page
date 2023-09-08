@@ -33,7 +33,8 @@ export class CampeonComponent implements OnInit, AfterViewInit {
   }
 
   ngOnInit(): void {
-
+  console.log(this.activatedRoute.params);
+  
     this.activatedRoute.params
       .pipe(
         tap( ({ champion }) => {

@@ -24,7 +24,7 @@ export class ListadoComponent implements OnInit {
   ngOnInit(): void {
     this.campeonesService.getCampeones().subscribe(( data: any ) => {
       this.campeones = Object.values( data.data )
-      // console.log( Object.values(data.data) )
+      console.log( this.campeones )
 
     })
     // this.campeonesService.getCampeones()
