@@ -24,13 +24,16 @@ body {
 
   .letra:hover {
     transform: translateY(-1rem);
-    background: rgb(194,143,44);
-    background: linear-gradient(0deg, rgb(194,143,44) 50%, rgb(194, 144, 44) 80%);
+    background: rgb(194, 143, 44);
+    background: linear-gradient(
+      0deg,
+      rgb(194, 143, 44) 50%,
+      rgb(194, 144, 44) 80%
+    );
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-    -webkit-text-stroke: 2px rgb(194,143,44)
+    -webkit-text-stroke: 2px rgb(194, 143, 44);
   }
-
 }
 
 .container {
@@ -39,6 +42,7 @@ body {
   align-items: center;
   text-align: center;
   padding: 10px;
+  margin-bottom: auto;
 }
 .div-centrado {
   display: flex;
@@ -91,5 +95,27 @@ section {
     width: 300px;
     opacity: 1;
     filter: contrast(120%);
+  }
+}
+
+.champion-info {
+  background-color: white;
+  color: black;
+  padding: 20px;
+  border-radius: 5px;
+  text-align: center;
+  display: flex; /* Add display: flex */
+  justify-content: flex-start; /* Center horizontally */
+  align-items: center; /* Center vertically */
+  flex-direction: column; /* Stack child elements vertically */
+  h2 {
+    font-size: 24px;
+    margin: 0;
+    padding-bottom: 10px;
+  }
+
+  p {
+    font-size: 16px;
+    margin: 0;
   }
 }

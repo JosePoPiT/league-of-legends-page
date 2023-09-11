@@ -26,25 +26,16 @@
 
     <section>
       <img
-        src="../../../../assets/img/imagenes-portada/ezreal-portada.png"
-        alt=""
-      />
-      <img
-        src="../../../../assets/img/imagenes-portada/jayce-portada.png"
-        alt=""
-      />
-      <img
-        src="../../../../assets/img/imagenes-portada/lee-sin-portada.png"
-        alt=""
-      />
-      <img
-        src="../../../../assets/img/imagenes-portada/morgana-portada.png"
-        alt=""
-      />
-      <img
-        src="../../../../assets/img/imagenes-portada/zed-portada.png"
-        alt=""
-      />
+      *ngFor="let imgUrl of urlImagenes; let i = index"
+      src="{{ imgUrl }}"
+      alt=""
+      (mouseenter)="displayChampionInfo(imgUrl)"
+      (mouseleave)="hideChampionInfo()"
+    />
     </section>
+    <div class="champion-info" *ngIf="currentChampion">
+      <h2>{{ currentChampion.name }}</h2>
+      <p>{{ currentChampion.blurb }}</p>
+    </div>
   </div>
 </body>
