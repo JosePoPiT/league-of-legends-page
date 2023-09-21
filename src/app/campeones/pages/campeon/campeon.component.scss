@@ -10,6 +10,30 @@
     align-items: center;
 };
 
+.retro {
+    font-family: 'Roboto, "Helvetica Neue", sans-seri';
+    font-weight: 700;
+    text-transform: uppercase;
+
+    background-color: white;
+    padding: 0.75rem 1rem;
+    border-radius: 0.25rem;
+    border: solid 0.125rem 0.25rem #121212;
+    box-shadow: 0.25rem 0.25rem #121212;
+
+    transition: 
+        transform 50ms, box-shadow 50ms;
+    :active {
+        transform: translate(0.125rem, 0.125rem);
+        box-shadow: 0.125rem 0.125rem #121212;
+    }
+}
+
+// .retro:active {
+//     transform: translate(0.125rem, 0.125rem);
+//     box-shadow: 0.125rem 0.125rem #121212;
+// }
+
 .presentation {
     width: 100%;
     display: flex;
@@ -29,12 +53,12 @@
     }
 
     h3 {
-        color: #a698be;
+        color: rgba(0,0,0,.54);;
     }
 }
 
 .texto-campeon {
-    color: #5210c4b4;
+    color: rgba(0,0,0,.54);;
     font-size: 16px;
 };
 

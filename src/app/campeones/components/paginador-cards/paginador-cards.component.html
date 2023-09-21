@@ -1,11 +1,9 @@
-<!-- Display paginated cards -->
 <div class="card__container">
   <div class="card__container__item" *ngFor="let campeon of paginatedCampeones">
     <app-campeon-tajerta [campeon]="campeon"></app-campeon-tajerta>
   </div>
 </div>
 
-<!-- Add pagination controls -->
 <mat-paginator
   [length]="campeones.length"
   [pageSize]="pageSize"
