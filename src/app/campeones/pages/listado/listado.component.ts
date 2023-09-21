@@ -27,20 +27,6 @@ export class ListadoComponent implements OnInit {
       console.log( this.campeones )
 
     })
-    // this.campeonesService.getCampeones()
-    //   .subscribe( (campeones: any) => {
-    //     console.log( campeones.data );
-    //     Object.values(this.);
-    //     this.campeones = campeones
-    //   })
-    // this.getChampions()
-  }
-
-  // getChampions(): any {
-  //   this.http.get( 'http://ddragon.leagueoflegends.com/cdn/11.23.1/data/en_US/champion.json' )
-  //     .subscribe(( champions: any ) => {
-  //       console.log(champions)
-  //     })
-  // }
-
+   
+}
 }

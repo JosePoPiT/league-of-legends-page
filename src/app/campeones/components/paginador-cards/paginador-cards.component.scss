@@ -1,0 +1,10 @@
+.card__container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 28px;
+  justify-content: space-around;
+
+  &__item {
+    width: 31%;
+  }
+}

@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { Campeon } from '../../interfaces/campeones.interface';
 
 @Component({
@@ -6,8 +6,14 @@ import { Campeon } from '../../interfaces/campeones.interface';
   templateUrl: './campeon-tarjeta.component.html',
   styleUrls: ['./campeon-tarjeta.component.scss']
 })
-export class CampeonTajertaComponent {
+export class CampeonTajertaComponent implements OnInit {
 
-  @Input() campeon!: Campeon
+  @Input() campeon!: Campeon;
+
+  ngOnInit(): void {
+    console.log(this.campeon);
+    
+  }
+  
 
 }

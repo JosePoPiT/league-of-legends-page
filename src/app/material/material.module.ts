@@ -11,6 +11,8 @@ import {MatListModule} from '@angular/material/list';
 import {MatCardModule} from '@angular/material/card';
 import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 import {MatGridListModule} from '@angular/material/grid-list';
+import { MatPaginatorModule } from '@angular/material/paginator';
+
 
 
 
@@ -35,7 +37,8 @@ import {MatGridListModule} from '@angular/material/grid-list';
     MatListModule,
     MatCardModule,
     MatProgressSpinnerModule,
-    MatGridListModule
+    MatGridListModule,
+    MatPaginatorModule
 
   ]
  
