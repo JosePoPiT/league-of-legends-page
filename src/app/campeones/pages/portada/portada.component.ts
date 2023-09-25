@@ -7,7 +7,6 @@ import {
 } from '@angular/core';
 import { CampeonesService } from '../../services/campeones.service';
 import { Campeon } from '../../interfaces/campeones.interface';
-import { animate, style, transition, trigger } from '@angular/animations';
 
 @Component({
   selector: 'app-portada',
@@ -37,15 +36,11 @@ export class PortadaComponent implements OnInit {
   ngOnInit(): void {
     this.loadImages();
     this.getCampeones();
-    console.log(this.urlImagenes);
-
-    // this.cargarImagenes();
+    setInterval(() => {
+      this.currentIndex = (this.currentIndex + 1) % this.urlImagenes.length;
+    }, 1500)
   }
-
-  // onImageLoad() {
-  //   this.currentIndex = (this.currentIndex + 1) % this.urlImagenes.length;
-  // }
-
+  
   getCampeones() {
     this.campeonesService.getCampeones().subscribe((data: any) => {
       this.campeones = Object.values(data.data);
@@ -69,10 +64,9 @@ export class PortadaComponent implements OnInit {
   }
 
   private extractImageName(imgUrl: string): string | null {
-    // Extract the name from the image URL. You may need to adjust this based on your URL structure.
     const parts = imgUrl.split('/');
     const imageNameWithExtension = parts[parts.length - 1];
-    const imageName = imageNameWithExtension.split('-')[0]; // Assuming image names are like "championName-portada.png"
+    const imageName = imageNameWithExtension.split('-')[0];
     return imageName;
   }
 
@@ -103,13 +97,4 @@ export class PortadaComponent implements OnInit {
     this.currentIndex = (this.currentIndex + 1) % this.urlImagenes.length;
     this.showImage();
   }
-
-  // cargarImagenes() {
-  //   for (let i = 1; i <= 5; i++) {
-  //     const imgUrl = `../../../../assets/img/imagenes-portada/${i}.png`;
-  //     this.urlImagenes.push(imgUrl)
-  //   }
-  //   console.log(this.urlImagenes);
-
-  // }
 }

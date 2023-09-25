@@ -3,10 +3,10 @@ mat-sidenav-container {
 
 
   .div-centrado {
-    position: relative; // Position the div absolutely within the container
-    top: 35%; // Move it 50% down from the top edge
-    left: 45%; // Move it 50% from the left edge
-    transform: translate(-50%, -50%); // Center it exactly
+    position: relative;
+    top: 35%;
+    left: 45%;
+    transform: translate(-50%, -50%);
   }
 
   .logo-image {
