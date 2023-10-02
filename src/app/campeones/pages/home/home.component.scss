@@ -1,6 +1,5 @@
 mat-sidenav-container {
- position: relative;
-
+  position: relative;
 
   .div-centrado {
     position: relative;
@@ -38,8 +37,28 @@ mat-sidenav-container {
 }
 
 .background {
-    background-color: #ffffff;
-    padding-top: 20px;
+  background-color: #ffffff;
+  padding-top: 20px;
 }
 
+@media (max-width: 550px) {
+  mat-sidenav-container {
+    .div-centrado {
+      transform: translate(-80%, -50%);
+    }
+    .logo-image {
+      max-width: 40px;
+    }
+  }
+}
 
+@media (max-width: 430px) {
+  mat-sidenav-container {
+    .div-centrado {
+      transform: translate(-120%, -48%);
+    }
+    .logo-image {
+      max-width: 40px;
+    }
+  }
+}
