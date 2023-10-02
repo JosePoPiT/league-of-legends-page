@@ -28,25 +28,14 @@
       <div class="image-container">
         <ng-container *ngFor="let imgUrl of urlImagenes; let i = index">
           <img
-            src="{{ imgUrl }}"
+            src="{{ imgUrl.url }}"
             alt=""
-            (mouseenter)="displayChampionInfo(imgUrl)"
-            (mouseleave)="hideChampionInfo()"
             [class.show-image]="i === currentIndex"
           />
+          <h2 [class.show-title]="i === currentIndex">{{ imgUrl.nombre }}</h2>
+          
         </ng-container>
       </div>
-      <!-- <img
-        *ngFor="let imgUrl of urlImagenes; let i = index"
-        src="{{ imgUrl }}"
-        alt=""
-        (mouseenter)="displayChampionInfo(imgUrl)"
-        (mouseleave)="hideChampionInfo()"
-      /> -->
     </section>
-    <div class="champion-info" *ngIf="currentChampion">
-      <h2>{{ currentChampion.name }}</h2>
-      <p>{{ currentChampion.blurb }}</p>
-    </div>
   </div>
 </body>

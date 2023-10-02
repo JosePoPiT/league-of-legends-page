@@ -56,7 +56,7 @@ body {
 @media (max-width: 430px) {
   .title-animado {
     .letra {
-      font-size: 20px; /* Adjust the font size as needed */
+      font-size: 30px; /* Adjust the font size as needed */
     }
   }
 }
@@ -114,6 +114,9 @@ section {
       &.show-image {
         opacity: 1;
       }
+      &.show-title {
+        opacity: 1;
+      }
     }
   }
 }
@@ -122,11 +125,22 @@ section {
 @media (min-width: 790px) {
   section {
     .image-container {
+      display: flex;
+      flex-direction: column;
       img {
+        margin-bottom: 20px;
+        display: none;
+      }
+
+      h2 {
+        font-size: 40px;
         display: none;
       }
 
       img.show-image {
+        display: block;
+      }
+      h2.show-title {
         display: block;
       }
     }
@@ -137,10 +151,46 @@ section {
   section {
     .image-container {
       img {
+        margin-bottom: 20px;
+        display: none;
+      }
+
+      
+      h2 {
+        font-size: 30px;
         display: none;
       }
 
       img.show-image {
+        display: block;
+      }
+
+      h2.show-title {
+        display: block;
+      }
+    }
+  }
+}
+
+@media (max-width: 470px) {
+  section {
+    .image-container {
+      img {
+        width: 550px;
+        margin-bottom: 20px;
+        display: none;
+      }
+       
+      h2 {
+        font-size: 30px;
+        display: none;
+      }
+
+      img.show-image {
+        display: block;
+      }
+
+      h2.show-title {
         display: block;
       }
     }

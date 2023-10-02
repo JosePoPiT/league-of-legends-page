@@ -16,16 +16,33 @@ import { Campeon } from '../../interfaces/campeones.interface';
 export class PortadaComponent implements OnInit {
   @ViewChild('imageContainer') imageContainer: ElementRef | undefined;
   currentChampion: Campeon | null = null;
-
+  prueba: any;
+  newArray: any = []
   currentIndex: number = 0;
+  current: number = 0;
 
   campeones: Campeon[] = [];
-  urlImagenes: string[] = [
-    '../../../../assets/img/imagenes-portada/Ezreal-portada.png',
-    '../../../../assets/img/imagenes-portada/Jayce-portada.png',
-    '../../../../assets/img/imagenes-portada/Lee Sin-portada.png',
-    '../../../../assets/img/imagenes-portada/Morgana-portada.png',
-    '../../../../assets/img/imagenes-portada/Zed-portada.png',
+  urlImagenes: any[] = [
+    {
+      nombre: 'Ezreal',
+      url: '../../../../assets/img/imagenes-portada/Ezreal-portada.png',
+    },
+    {
+      nombre: 'Jayce',
+      url: '../../../../assets/img/imagenes-portada/Jayce-portada.png',
+    },
+    {
+      nombre: 'Lee Sin',
+      url: '../../../../assets/img/imagenes-portada/Lee Sin-portada.png',
+    },
+    {
+      nombre: 'Morgana',
+      url: '../../../../assets/img/imagenes-portada/Morgana-portada.png',
+    },
+    {
+      nombre: 'Zed',
+      url: '../../../../assets/img/imagenes-portada/Zed-portada.png', 
+    }
   ];
 
   constructor(
@@ -36,9 +53,12 @@ export class PortadaComponent implements OnInit {
   ngOnInit(): void {
     this.loadImages();
     this.getCampeones();
+
     setInterval(() => {
       this.currentIndex = (this.currentIndex + 1) % this.urlImagenes.length;
-    }, 1500)
+      this.displayInfo();
+
+    }, 2000)
   }
   
   getCampeones() {
@@ -48,8 +68,35 @@ export class PortadaComponent implements OnInit {
     });
   }
 
+  displayInfo() {
+    const test = [
+      'Ezreal',
+      'Jayce',
+      'Lee Sin',
+      'Morgana',
+      'Zed'
+    ]
+
+    const testTwo = test.map(nombre => {
+      const testTree = this.campeones.find((c) => c.name === nombre)
+      this.prueba = testTree;
+      if (this.newArray.length <= 4) {
+        this.newArray.push(this.prueba);
+        this.current = (this.current + 1) % this.newArray.length;
+      }
+      
+      
+      return nombre;
+    }
+    )
+  }
+
   displayChampionInfo(imgUrl: string) {
+    
     const imageName = this.extractImageName(imgUrl);
+    console.log(imageName);
+
+    
 
     if (imageName) {
       const champion = this.campeones.find((champ) => champ.name === imageName);
