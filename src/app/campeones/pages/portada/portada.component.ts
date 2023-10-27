@@ -139,9 +139,4 @@ export class PortadaComponent implements OnInit {
       });
     }
   }
-
-  onImageLoad() {
-    this.currentIndex = (this.currentIndex + 1) % this.urlImagenes.length;
-    this.showImage();
-  }
 }
