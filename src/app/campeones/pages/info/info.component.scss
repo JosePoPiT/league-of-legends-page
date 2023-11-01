@@ -1,5 +1,16 @@
 .game-map {
-    background-color: #ecf0f1;
-    display: flex;
-    justify-content: center;
+  background-color: #ecf0f1;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  text-align: justify;
+  padding: 20px;
+
+  img {
+    transition: transform 0.3s ease;
+
+    &:hover {
+      transform: scale(1.01);
+    }
+  }
 }
