@@ -17,7 +17,7 @@ export class PortadaComponent implements OnInit {
   @ViewChild('imageContainer') imageContainer: ElementRef | undefined;
   currentChampion: Campeon | null = null;
   prueba: any;
-  newArray: any = []
+  newArray: any = [];
   currentIndex: number = 0;
   current: number = 0;
 
@@ -41,8 +41,8 @@ export class PortadaComponent implements OnInit {
     },
     {
       nombre: 'Zed',
-      url: '../../../../assets/img/imagenes-portada/zed-portada.png', 
-    }
+      url: '../../../../assets/img/imagenes-portada/zed-portada.png',
+    },
   ];
 
   constructor(
@@ -57,10 +57,9 @@ export class PortadaComponent implements OnInit {
     setInterval(() => {
       this.currentIndex = (this.currentIndex + 1) % this.urlImagenes.length;
       this.displayInfo();
-
-    }, 2000)
+    }, 2000);
   }
-  
+
   getCampeones() {
     this.campeonesService.getCampeones().subscribe((data: any) => {
       this.campeones = Object.values(data.data);
@@ -69,34 +68,22 @@ export class PortadaComponent implements OnInit {
   }
 
   displayInfo() {
-    const test = [
-      'Ezreal',
-      'Jayce',
-      'Lee Sin',
-      'Morgana',
-      'Zed'
-    ]
+    const test = ['Ezreal', 'Jayce', 'Lee Sin', 'Morgana', 'Zed'];
 
-    const testTwo = test.map(nombre => {
-      const testTree = this.campeones.find((c) => c.name === nombre)
+    const testTwo = test.map((nombre) => {
+      const testTree = this.campeones.find((c) => c.name === nombre);
       this.prueba = testTree;
       if (this.newArray.length <= 4) {
         this.newArray.push(this.prueba);
         this.current = (this.current + 1) % this.newArray.length;
       }
-      
-      
       return nombre;
-    }
-    )
+    });
   }
 
   displayChampionInfo(imgUrl: string) {
-    
     const imageName = this.extractImageName(imgUrl);
     console.log(imageName);
-
-    
 
     if (imageName) {
       const champion = this.campeones.find((champ) => champ.name === imageName);
