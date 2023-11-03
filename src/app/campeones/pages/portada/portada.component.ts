@@ -25,11 +25,11 @@ export class PortadaComponent implements OnInit {
   urlImagenes: any[] = [
     {
       nombre: 'Ezreal',
-      url: '../../../../assets/img/imagenes-portada/Ezreal-portada.png',
+      url: '../../../../assets/img/imagenes-portada/ezreal-portada.png',
     },
     {
       nombre: 'Jayce',
-      url: '../../../../assets/img/imagenes-portada/Jayce-portada.png',
+      url: '../../../../assets/img/imagenes-portada/jayce-portada.png',
     },
     {
       nombre: 'Lee Sin',
@@ -37,11 +37,11 @@ export class PortadaComponent implements OnInit {
     },
     {
       nombre: 'Morgana',
-      url: '../../../../assets/img/imagenes-portada/Morgana-portada.png',
+      url: '../../../../assets/img/imagenes-portada/morgana-portada.png',
     },
     {
       nombre: 'Zed',
-      url: '../../../../assets/img/imagenes-portada/Zed-portada.png', 
+      url: '../../../../assets/img/imagenes-portada/zed-portada.png', 
     }
   ];
 
