@@ -17,7 +17,7 @@ export class CampeonesService {
 
   getCampeonPorId(id: string): Observable<any> {
     return this.http.get<any>(
-    `https://ddragon.leagueoflegends.com/cdn/13.14.1/data/es_ES/champion/${id}.json`   
+      `https://ddragon.leagueoflegends.com/cdn/13.14.1/data/es_ES/champion/${id}.json`
     );
   }
 }
