@@ -9,7 +9,8 @@
 .big-title {
   text-align: center;
   margin-bottom: 20px;
-  margin-right: 50px;
+  margin-right: 0;
+  width: 100%;
 }
 
 .game-map {
@@ -32,5 +33,96 @@
   h2 {
     font-size: 24px;
     margin-bottom: 20px;
+  }
+}
+
+.maps-list {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  width: 100%;
+  align-items: center;
+}
+
+.map-card {
+  background: rgba(255,255,255,0.97);
+  border-radius: 18px;
+  box-shadow: 0 4px 24px #0002;
+  padding: 32px 32px 24px 32px;
+  max-width: 700px;
+  width: 100%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.map-title {
+  font-size: 2rem;
+  color: #c89b3c;
+  font-weight: 800;
+  margin-bottom: 18px;
+  text-align: center;
+  letter-spacing: 1px;
+}
+
+.map-img {
+  width: 100%;
+  max-width: 600px;
+  border-radius: 12px;
+  box-shadow: 0 2px 16px #0003;
+  margin-bottom: 18px;
+  margin-top: 8px;
+  transition: transform 0.3s;
+}
+
+.map-img:hover {
+  transform: scale(1.02);
+}
+
+.map-desc {
+  font-size: 1.08rem;
+  color: #222;
+  text-align: justify;
+  margin-bottom: 0;
+  font-family: 'Montserrat', 'Roboto', Arial, sans-serif;
+}
+
+@media (max-width: 900px) {
+  .map-card {
+    max-width: 98vw;
+    padding: 18px 4vw 16px 4vw;
+  }
+  .map-img {
+    max-width: 90vw;
+  }
+}
+
+@media (max-width: 600px) {
+  .maps-list {
+    gap: 20px;
+  }
+  .map-card {
+    max-width: 98vw;
+    padding: 10px 2vw 10px 2vw;
+    border-radius: 10px;
+  }
+  .map-title {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+  }
+  .map-img {
+    max-width: 96vw;
+    border-radius: 8px;
+    margin-bottom: 10px;
+    margin-top: 4px;
+  }
+  .map-desc {
+    font-size: 0.98rem;
+  }
+  .big-title {
+    margin-bottom: 12px;
+    margin-right: 0;
+    width: 100%;
   }
 }

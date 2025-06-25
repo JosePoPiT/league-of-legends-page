@@ -14,8 +14,11 @@ export class AppComponent {
     private router: Router,
     private viewPortScroller: ViewportScroller
   ){
+    // Comentado temporalmente para evitar el refresco automático
+    /*
     this.router.events.pipe(
       filter(event => event instanceof NavigationEnd))
       .subscribe(() => this.viewPortScroller.scrollToPosition([0, 0]));
+    */
   }
 }

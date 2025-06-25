@@ -2,18 +2,30 @@
   <div class="big-title">
     <h1>Mapas</h1>
   </div>
-  <div class="game-map">
-    <h2>Grieta del Invocador</h2>
-    <img src="{{ map }}" alt="" />
-    <p>{{ mapInformation }}</p>
-    <h2>El Bosque Retorcido</h2>
-    <img src="{{ twistedMap }}" alt="">
-    <p>{{ twistedMapInfo }}</p>
-    <h2>La Camara de Magma</h2>
-    <img src="{{ magmaMap }}" alt="">
-    <p>{{ magmaInfo }}</p>
-    <h2>Cicatriz de Cristal "Dominio"</h2>
-    <img src="{{ dominionMap }}" alt="">
-    <p>{{ dominionInfo }}</p>
+  <div class="maps-list">
+    <!-- Grieta del Invocador -->
+    <div class="map-card">
+      <h2 class="map-title">Grieta del Invocador</h2>
+      <img class="map-img" src="{{ map }}" alt="Grieta del Invocador" />
+      <p class="map-desc">{{ mapInformation }}</p>
+    </div>
+    <!-- Bosque Retorcido -->
+    <div class="map-card">
+      <h2 class="map-title">El Bosque Retorcido</h2>
+      <img class="map-img" src="{{ twistedMap }}" alt="El Bosque Retorcido" />
+      <p class="map-desc">{{ twistedMapInfo }}</p>
+    </div>
+    <!-- Magma Map -->
+    <div class="map-card">
+      <h2 class="map-title">La Cámara de Magma</h2>
+      <img class="map-img" src="{{ magmaMap }}" alt="La Cámara de Magma" />
+      <p class="map-desc">{{ magmaInfo }}</p>
+    </div>
+    <!-- Dominio -->
+    <div class="map-card">
+      <h2 class="map-title">Cicatriz de Cristal "Dominio"</h2>
+      <img class="map-img" src="{{ dominionMap }}" alt="Dominio" />
+      <p class="map-desc">{{ dominionInfo }}</p>
+    </div>
   </div>
 </div>

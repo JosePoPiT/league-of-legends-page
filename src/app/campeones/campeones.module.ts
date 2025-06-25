@@ -13,13 +13,8 @@ import { CampeonTajertaComponent } from './components/campeon-tajeta/campeon-tar
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { SwiperModule } from 'swiper/angular';
 import { PortadaComponent } from './pages/portada/portada.component';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { BrowserModule } from '@angular/platform-browser';
 import { PaginadorCardsComponent } from './components/paginador-cards/paginador-cards.component';
 import { InfoComponent } from '../campeones/pages/info/info.component';
-
-
-
 
 @NgModule({
   declarations: [

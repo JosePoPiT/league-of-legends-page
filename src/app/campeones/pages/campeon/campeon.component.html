@@ -6,126 +6,128 @@
 </div>
 
 <ng-template #divCampeon>
-  <div fxLayout="row">
-    <div class="presentation">
-      <img
-        src="https://ddragon.leagueoflegends.com/cdn/img/champion/splash/{{
-          [campeonKey]
-        }}_0.jpg"
-        alt=""
-      />
-      <h1>{{ campeon.name | uppercase }}</h1>
-      <h3>{{ campeon.title | uppercase }}</h3>
-    </div>
-  </div>
-
-  <div fxLayout="row" fxLayout.xs="column" fxLayoutGap="60px">
-    <div fxFlex="50">
-      <div>
-        <h2>HISTORIA DEL CAMPEÓN</h2>
-        <mat-divider></mat-divider>
-        <br />
-        <p class="texto-campeon">{{ campeon.lore }}</p>
+  <div class="campeon-detail-wrapper">
+    <div fxLayout="row">
+      <div class="presentation">
+        <img
+          src="https://ddragon.leagueoflegends.com/cdn/img/champion/splash/{{
+            [campeonKey]
+          }}_0.jpg"
+          alt=""
+        />
+        <h1>{{ campeon.name | uppercase }}</h1>
+        <h3>{{ campeon.title | uppercase }}</h3>
       </div>
-      <div>
-        <h2>HABILIDADES</h2>
-        <mat-divider></mat-divider>
-        <br />
-        <div fxLayout="row" fxLayoutAlign="space-between center">
-          <div *ngFor="let skill of campeon.skills" class="campeon-skills">
-            <input
-              type="radio"
-              name="championSkills"
-              [formControl]="skillsControl"
-              [id]="skill.name"
-              [value]="skill.name"
-            />
-            <div class="skill-label">
-              <label [for]="skill.name">
-                <img [src]="skill.img" alt="" />
-              </label>
+    </div>
+
+    <div fxLayout="row" fxLayout.xs="column" fxLayoutGap="60px">
+      <div fxFlex="50">
+        <div>
+          <h2>HISTORIA DEL CAMPEÓN</h2>
+          <mat-divider></mat-divider>
+          <br />
+          <p class="texto-campeon">{{ campeon.lore }}</p>
+        </div>
+        <div>
+          <h2>HABILIDADES</h2>
+          <mat-divider></mat-divider>
+          <br />
+          <div fxLayout="row" fxLayoutAlign="space-between center">
+            <div *ngFor="let skill of campeon.skills" class="campeon-skills">
+              <input
+                type="radio"
+                name="championSkills"
+                [formControl]="skillsControl"
+                [id]="skill.name"
+                [value]="skill.name"
+              />
+              <div class="skill-label">
+                <label [for]="skill.name">
+                  <img [src]="skill.img" alt="" />
+                </label>
+              </div>
             </div>
           </div>
+
+          <div class="skills-text">
+            <div #skillSelectedHtml></div>
+          </div>
+        </div>
+      </div>
+
+      <div fxFlex="50">
+        <div>
+          <h2>TIPS PARA USAR EL CAMPEÓN</h2>
+          <mat-divider></mat-divider>
+          <br />
+          <p class="texto-campeon" *ngFor="let aTip of campeon.allytips">
+            - {{ aTip }}
+          </p>
         </div>
 
-        <div class="skills-text">
-          <div #skillSelectedHtml></div>
+        <div>
+          <h2>TIPS PARA VENCER AL CAMPEÓN</h2>
+          <mat-divider></mat-divider>
+          <br />
+          <p class="texto-campeon" *ngFor="let eTip of campeon.enemytips">
+            - {{ eTip }}
+          </p>
         </div>
+        <button class="retro" (click)="regresar()">Regresar</button>
       </div>
     </div>
 
-    <div fxFlex="50">
-      <div>
-        <h2>TIPS PARA USAR EL CAMPEÓN</h2>
+    <div class="campeon__skins">
+      <div class="campeon__skins__title">
+        <h2>Aspectos de los campeones</h2>
         <mat-divider></mat-divider>
         <br />
-        <p class="texto-campeon" *ngFor="let aTip of campeon.allytips">
-          - {{ aTip }}
-        </p>
       </div>
-
-      <div>
-        <h2>TIPS PARA VENCER AL CAMPEÓN</h2>
-        <mat-divider></mat-divider>
-        <br />
-        <p class="texto-campeon" *ngFor="let eTip of campeon.enemytips">
-          - {{ eTip }}
-        </p>
+      <div class="campeon__skins__thumbs">
+        <swiper
+          style="--swiper-navigation-color: #fff; --swiper-pagination-color: #fff"
+          [spaceBetween]="10"
+          [thumbs]="{ swiper: thumbsSwiper }"
+          class="mySwiper2"
+        >
+          <ng-template swiperSlide *ngFor="let skin of campeon?.skins">
+            <div class="campeon__skins__thumbs__container">
+              <img
+                src="https://ddragon.leagueoflegends.com/cdn/img/champion/splash/{{
+                  campeonKey
+                }}_{{ skin.num }}.jpg"
+              />
+              <div class="campeon__skins__thumbs__container__title">
+                <h4>{{ skin.name === "default" ? campeon.name : skin.name }}</h4>
+              </div>
+            </div>
+          </ng-template>
+        </swiper>
       </div>
-      <button class="retro" (click)="regresar()">Regresar</button>
-    </div>
-  </div>
-
-  <div class="campeon__skins">
-    <div class="campeon__skins__title">
-      <h2>Aspectos de los campeones</h2>
-      <mat-divider></mat-divider>
-      <br />
-    </div>
-    <div class="campeon__skins__thumbs">
-      <swiper
-        style="--swiper-navigation-color: #fff; --swiper-pagination-color: #fff"
-        [spaceBetween]="10"
-        [thumbs]="{ swiper: thumbsSwiper }"
-        class="mySwiper2"
-      >
-        <ng-template swiperSlide *ngFor="let skin of campeon?.skins">
-          <div class="campeon__skins__thumbs__container">
+      <div class="campeon__skins__slides">
+        <swiper
+          style="--swiper-navigation-color: #fff; --swiper-pagination-color: #fff"
+          (swiper)="thumbsSwiper = $event"
+          [spaceBetween]="10"
+          [slidesPerView]="
+            campeon?.skins?.length || 3 > 2 ? 3 : campeon?.skins?.length
+          "
+          [freeMode]="true"
+          [navigation]="true"
+          [pagination]="{ clickable: true }"
+          [watchSlidesProgress]="true"
+          class="mySwiper"
+        >
+          <ng-template swiperSlide *ngFor="let skin of campeon?.skins">
             <img
+              class="campeon__skins__slides__img"
               src="https://ddragon.leagueoflegends.com/cdn/img/champion/splash/{{
                 campeonKey
               }}_{{ skin.num }}.jpg"
             />
-            <div class="campeon__skins__thumbs__container__title">
-              <h4>{{ skin.name === "default" ? campeon.name : skin.name }}</h4>
-            </div>
-          </div>
-        </ng-template>
-      </swiper>
-    </div>
-    <div class="campeon__skins__slides">
-      <swiper
-        style="--swiper-navigation-color: #fff; --swiper-pagination-color: #fff"
-        (swiper)="thumbsSwiper = $event"
-        [spaceBetween]="10"
-        [slidesPerView]="
-          campeon?.skins?.length || 3 > 2 ? 3 : campeon?.skins?.length
-        "
-        [freeMode]="true"
-        [navigation]="true"
-        [pagination]="{ clickable: true }"
-        [watchSlidesProgress]="true"
-        class="mySwiper"
-      >
-        <ng-template swiperSlide *ngFor="let skin of campeon?.skins">
-          <img
-            class="campeon__skins__slides__img"
-            src="https://ddragon.leagueoflegends.com/cdn/img/champion/splash/{{
-              campeonKey
-            }}_{{ skin.num }}.jpg"
-          />
-        </ng-template>
-      </swiper>
+          </ng-template>
+        </swiper>
+      </div>
     </div>
   </div>
 </ng-template>

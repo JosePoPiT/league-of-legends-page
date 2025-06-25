@@ -33,6 +33,11 @@ const rutas: Routes = [
         component: CampeonComponent,
       },
       {
+        path: '',
+        redirectTo: 'portada',
+        pathMatch: 'full'
+      },
+      {
         path: '**',
         redirectTo: 'portada',
       },

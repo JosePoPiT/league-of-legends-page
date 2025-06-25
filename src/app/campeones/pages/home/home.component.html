@@ -1,5 +1,4 @@
-
-<mat-sidenav-container fxLayout="column">
+<mat-sidenav-container fxLayout="column" style="height: 100vh; min-height: 100vh;">
     <mat-sidenav #sidenav mode="push">
         <mat-toolbar color="primary">
             <span>Menú</span>
@@ -37,25 +36,17 @@
             </a>
         </mat-nav-list>
     </mat-sidenav>
-    <mat-toolbar color="primary">
-        
-        <button mat-raised-button
-                (click)="sidenav.toggle()">
-            <mat-icon>view_list</mat-icon>
-        </button>
-        <!-- <div fxLayout="column" fxLayoutAlign="center center" class="div-centrado">
-            <img class="logo-image" src="../../../../assets/img/lollogo.png">
-        </div> -->
-        <a routerLink="/campeones/portada" fxLayout="column" fxLayoutAlign="center center" class="div-centrado">
-            <img class="logo-image" src="../../../../assets/img/lollogo.png">
-        </a>
-          
-    </mat-toolbar>
-
-    <div fxLayout="row" fxLayoutAlign="center center" class="background">
-        <div fxFlex="85" >
-            <router-outlet></router-outlet>
-        </div>
+    <div style="display: flex; flex-direction: column; height: 100%; min-height: 0; flex: 1;">
+      <mat-toolbar color="primary">
+          <button mat-raised-button (click)="sidenav.toggle()">
+              <mat-icon>view_list</mat-icon>
+          </button>
+          <a routerLink="/campeones/portada" fxLayout="column" fxLayoutAlign="center center" class="div-centrado">
+              <img class="logo-image" src="../../../../assets/img/lollogo.png">
+          </a>
+      </mat-toolbar>
+      <div style="flex: 1; min-height: 0;">
+          <router-outlet></router-outlet>
+      </div>
     </div>
-
 </mat-sidenav-container>

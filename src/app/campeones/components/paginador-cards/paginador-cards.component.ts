@@ -8,7 +8,7 @@ import { Component, OnInit, Input } from '@angular/core';
 export class PaginadorCardsComponent implements OnInit {
 
   @Input() campeones: any[] = [];
-  pageSize = 8;
+  pageSize = 4;
   currentPage = 1;
 
   constructor() { }

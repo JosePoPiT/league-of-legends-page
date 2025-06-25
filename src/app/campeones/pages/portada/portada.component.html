@@ -1,41 +1,6 @@
-<body>
-  <div class="container">
-    <div class="title-animado">
-      <div class="letra">E</div>
-      <div class="letra">S</div>
-      <div class="letra">C</div>
-      <div class="letra">O</div>
-      <div class="letra">G</div>
-      <div class="letra">E</div>
-      <br />
-      <br />
-      &nbsp; &nbsp; &nbsp;
-      <div class="letra">T</div>
-      <div class="letra">U</div>
-      <br />
-      <br />
-      &nbsp; &nbsp; &nbsp;
-      <div class="letra">C</div>
-      <div class="letra">A</div>
-      <div class="letra">M</div>
-      <div class="letra">P</div>
-      <div class="letra">E</div>
-      <div class="letra">O</div>
-      <div class="letra">N</div>
-    </div>
-
-    <section>
-      <div class="image-container">
-        <ng-container *ngFor="let imgUrl of urlImagenes; let i = index">
-          <img
-            src="{{ imgUrl.url }}"
-            alt=""
-            [class.show-image]="i === currentIndex"
-          />
-          <h2 [class.show-title]="i === currentIndex">{{ imgUrl.nombre }}</h2>
-          
-        </ng-container>
-      </div>
-    </section>
-  </div>
-</body>
+<div class="container">
+  <img src="../../../../assets/img/lollogo.png" alt="League of Legends Logo" class="portada-logo">
+  <h1 class="portada-title">League of Legends</h1>
+  <p class="portada-desc">Descubre el universo de campeones más épico y sumérgete en la Grieta del Invocador.</p>
+  <button class="portada-btn" (click)="goToChampions()">Explorar Campeones</button>
+</div>
