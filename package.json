@@ -5,6 +5,7 @@
     "ng": "ng",
     "start": "set NODE_OPTIONS=--openssl-legacy-provider && ng serve",
     "build": "set NODE_OPTIONS=--openssl-legacy-provider && ng build",
+    "build:prod": "set NODE_OPTIONS=--openssl-legacy-provider && ng build --configuration production --base-href=/league-of-legends-page/",
     "watch": "set NODE_OPTIONS=--openssl-legacy-provider && ng build --watch --configuration development",
     "test": "ng test"
   },
